@@ -2,7 +2,25 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import "./App.css";
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import {
+  Ecommerce,
+  Orders,
+  Calendar,
+  Employees,
+  Stacked,
+  Pyramid,
+  Customers,
+  Kanban,
+  Line,
+  Area,
+  Bar,
+  Pie,
+  Financial,
+  ColorPicker,
+  ColorMapping,
+  Editor,
+} from "./pages";
 
 const App = () => {
   let activeMenu = true;
@@ -23,10 +41,12 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
-              Sidebar
+              <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">Sidebar</div>
+            <div className="w-0 dark:bg-secondary-dark-bg">
+              <Sidebar />
+            </div>
           )}
           <div
             className={
@@ -36,18 +56,18 @@ const App = () => {
             }
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-              Navbar
+              <Navbar />
             </div>
             <div>
               <Routes>
                 {/* Dashboard */}
-                <Route path="/" element="Ecommerce"></Route>
-                <Route path="/ecommerce" element="Ecommerce"></Route>
+                <Route path="/" element={<Ecommerce />} />
+                <Route path="/ecommerce" element={<Ecommerce />} />
 
                 {/* pages */}
-                <Route path="/orders" element="Orders"></Route>
-                <Route path="/employess" element="Employees"></Route>
-                <Route path="/customers" element="Customers"></Route>
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employess" element={<Employees />} />
+                <Route path="/customers" element={<Customers />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
