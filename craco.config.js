@@ -1,4 +1,4 @@
-//craco.config
+//craco.config.js
 module.exports = {
   style: {
     postcss: {
